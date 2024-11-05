@@ -44,6 +44,7 @@ const Login = () => {
         { email, password },
         { withCredentials: true }
       );
+      console.log(res.data.success);
 
       if (res.data.success === false) {
         toast.error(res.data.message);
