@@ -35,7 +35,7 @@ const Home = () => {
       navigate("/login");
     } else {
       setUserInfo(currentUser?.rest);
-      // getAllNotes();
+      getAllNotes();
     }
   }, []);
 
