@@ -47,6 +47,7 @@ const Home = () => {
           withCredentials: true,
         }
       );
+      console.log("data", res.data);
 
       if (res.data.success === false) {
         toast.error(res.data.message);
