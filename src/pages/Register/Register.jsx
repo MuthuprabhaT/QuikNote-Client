@@ -36,7 +36,7 @@ const Register = () => {
     // Sign up api
     try {
       const res = await axios.post(
-        "http://localhost:5001/api/auth/signup",
+        "https://quiknote-server.onrender.com/api/auth/signup",
         { username: name, email, password },
         { withCredentials: true }
       );

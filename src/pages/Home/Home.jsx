@@ -41,9 +41,12 @@ const Home = () => {
 
   const getAllNotes = async () => {
     try {
-      const res = await axios.get("http://localhost:5001/api/note/allNotes", {
-        withCredentials: true,
-      });
+      const res = await axios.get(
+        "https://quiknote-server.onrender.com/api/note/allNotes",
+        {
+          withCredentials: true,
+        }
+      );
 
       if (res.data.success === false) {
         toast.error(res.data.message);
@@ -65,7 +68,7 @@ const Home = () => {
 
     try {
       const res = await axios.delete(
-        `http://localhost:5001/api/note/delete/${noteId}`,
+        `https://quiknote-server.onrender.com/api/note/delete/${noteId}`,
         { withCredentials: true }
       );
 
@@ -83,10 +86,13 @@ const Home = () => {
 
   const onSearchNote = async (query) => {
     try {
-      const res = await axios.get("http://localhost:5001/api/note/search", {
-        params: { query },
-        withCredentials: true,
-      });
+      const res = await axios.get(
+        "https://quiknote-server.onrender.com/api/note/search",
+        {
+          params: { query },
+          withCredentials: true,
+        }
+      );
 
       if (res.data.success === false) {
         toast.error(res.data.message);
@@ -110,7 +116,7 @@ const Home = () => {
 
     try {
       const res = await axios.put(
-        `http://localhost:5001/api/note//editNotePin/${noteId}`,
+        `https://quiknote-server.onrender.com/api/note//editNotePin/${noteId}`,
         { isPinned: !noteData.isPinned },
         { withCredentials: true }
       );
